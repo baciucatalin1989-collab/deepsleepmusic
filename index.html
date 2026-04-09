@@ -1,42 +1,60 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>DeepSleep</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 font-family:'Inter',sans-serif;
-background:#000;
-color:#fff;
+background:#020617;
+color:white;
 overflow-x:hidden;
 }
 
-/* VIDEO SKY BACKGROUND */
+/* STAR BACKGROUND */
 
-.video-bg{
+.stars{
 position:fixed;
-top:0;
-left:0;
 width:100%;
 height:100%;
-object-fit:cover;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:starsmove 120s linear infinite;
 z-index:-3;
-filter:brightness(0.35);
+opacity:0.6;
 }
 
-/* GRADIENT OVERLAY */
+@keyframes starsmove{
+from{transform:translateY(0)}
+to{transform:translateY(-2000px)}
+}
 
-.overlay{
+/* MOON */
+
+.moon{
 position:fixed;
-width:100%;
-height:100%;
-background:linear-gradient(to bottom,#02061788,#020617);
+right:120px;
+top:120px;
+width:200px;
+height:200px;
+border-radius:50%;
+background:#f1f5f9;
+box-shadow:
+0 0 60px rgba(255,255,255,0.5),
+0 0 120px rgba(255,255,255,0.3);
 z-index:-2;
 }
 
@@ -46,24 +64,25 @@ nav{
 position:fixed;
 top:0;
 width:100%;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(10px);
 display:flex;
 justify-content:center;
 gap:40px;
 padding:20px;
-z-index:5;
-border-bottom:1px solid rgba(255,255,255,0.05);
+background:rgba(2,6,23,0.6);
+backdrop-filter:blur(10px);
+z-index:10;
 }
 
 nav a{
 color:white;
 text-decoration:none;
 font-weight:500;
-opacity:0.85;
+opacity:0.9;
 }
 
-nav a:hover{opacity:1}
+nav a:hover{
+opacity:1;
+}
 
 /* HERO */
 
@@ -88,27 +107,26 @@ max-width:600px;
 opacity:0.8;
 }
 
-.button{
+.btn{
 margin-top:25px;
-padding:14px 28px;
+padding:14px 32px;
+background:#6366f1;
 border:none;
 border-radius:8px;
-background:#6366f1;
 color:white;
-font-size:15px;
 cursor:pointer;
 }
 
 /* SECTIONS */
 
-.section{
+section{
 padding:100px 20px;
 max-width:1200px;
 margin:auto;
 text-align:center;
 }
 
-.section h2{
+section h2{
 font-size:36px;
 margin-bottom:40px;
 }
@@ -138,7 +156,7 @@ margin-top:40px;
 }
 
 .product{
-background:rgba(10,15,30,0.9);
+background:#0b1225;
 padding:25px;
 border-radius:12px;
 transition:0.3s;
@@ -146,7 +164,7 @@ border:1px solid rgba(255,255,255,0.05);
 }
 
 .product:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 background:#111a35;
 }
 
@@ -154,25 +172,6 @@ background:#111a35;
 color:#a5b4fc;
 margin:10px 0;
 font-size:18px;
-}
-
-.buy{
-margin-top:10px;
-padding:10px 20px;
-border:none;
-background:#6366f1;
-color:white;
-border-radius:6px;
-cursor:pointer;
-}
-
-/* ABOUT */
-
-.about{
-max-width:700px;
-margin:auto;
-opacity:0.8;
-line-height:1.6;
 }
 
 /* FOOTER */
@@ -185,29 +184,22 @@ border-top:1px solid rgba(255,255,255,0.05);
 opacity:0.6;
 }
 
-@media(max-width:700px){
-.hero h1{font-size:50px}
-}
-
 </style>
 
 </head>
 
 <body>
 
-<!-- SKY VIDEO -->
-
-<video autoplay muted loop class="video-bg">
-<source src="https://cdn.coverr.co/videos/coverr-starry-night-sky-8576/1080p.mp4" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
+<div class="stars"></div>
+<div class="moon"></div>
 
 <nav>
+
 <a href="#home">Home</a>
 <a href="#videos">Videos</a>
 <a href="#store">Store</a>
 <a href="#about">About</a>
+
 </nav>
 
 <section class="hero" id="home">
@@ -215,16 +207,19 @@ opacity:0.6;
 <h1>DeepSleep</h1>
 
 <p>
-Ambient sleep music designed to help you relax, meditate and drift into deep restorative sleep.
+Ambient sleep music designed to help you relax,
+meditate and drift into deep restorative sleep.
 </p>
 
-<a href="https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ" target="_blank">
-<button class="button">Listen on YouTube</button>
+<a href="https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ">
+
+<button class="btn">Listen on YouTube</button>
+
 </a>
 
 </section>
 
-<section class="section" id="videos">
+<section id="videos">
 
 <h2>Latest Videos</h2>
 
@@ -242,69 +237,79 @@ Ambient sleep music designed to help you relax, meditate and drift into deep res
 
 </section>
 
-<section class="section" id="store">
+<section id="store">
 
 <h2>DeepSleep Store</h2>
 
 <div class="store">
 
 <div class="product">
-<h3>DeepSleep T-Shirt</h3>
+<h3>T-Shirt</h3>
 <div class="price">$29</div>
-<button class="buy">Buy</button>
+<button class="btn">Buy</button>
 </div>
 
 <div class="product">
-<h3>DeepSleep Candle</h3>
+<h3>Candle</h3>
 <div class="price">$19</div>
-<button class="buy">Buy</button>
+<button class="btn">Buy</button>
 </div>
 
 <div class="product">
-<h3>DeepSleep Hoodie</h3>
+<h3>Hoodie</h3>
 <div class="price">$49</div>
-<button class="buy">Buy</button>
+<button class="btn">Buy</button>
 </div>
 
 <div class="product">
-<h3>DeepSleep Blanket</h3>
+<h3>Blanket</h3>
 <div class="price">$89</div>
-<button class="buy">Buy</button>
+<button class="btn">Buy</button>
 </div>
 
 <div class="product">
-<h3>DeepSleep Essential Oil</h3>
+<h3>Aroma Oil</h3>
 <div class="price">$29</div>
-<button class="buy">Buy</button>
+<button class="btn">Buy</button>
 </div>
 
 </div>
 
 </section>
 
-<section class="section" id="about">
+<section id="about">
 
 <h2>About DeepSleep</h2>
 
-<p class="about">
-DeepSleep creates calming ambient soundscapes designed to help listeners relax, meditate and fall asleep faster. Our music blends atmospheric textures, soft frequencies and deep calming tones to create the perfect environment for rest and relaxation.
+<p style="max-width:700px;margin:auto;opacity:0.8">
+
+DeepSleep creates calming ambient soundscapes designed
+to help listeners relax, meditate and fall asleep faster.
+
 </p>
 
 <br>
 
-<a href="https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ" target="_blank">
-<button class="button">Subscribe on YouTube</button>
+<a href="https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ">
+
+<button class="btn">YouTube Channel</button>
+
 </a>
 
-<a href="https://www.tiktok.com/@deepsleep602" target="_blank">
-<button class="button">Follow on TikTok</button>
+<a href="https://www.tiktok.com/@deepsleep602">
+
+<button class="btn">TikTok</button>
+
 </a>
 
 </section>
 
 <footer>
+
 © DeepSleep Music
+
 </footer>
 
 </body>
 </html>
+```
