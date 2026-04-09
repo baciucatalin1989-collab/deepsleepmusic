@@ -12,7 +12,27 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:#020617;
 color:white;
-text-align:center;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#020617;
+padding:15px;
+display:flex;
+justify-content:center;
+gap:30px;
+z-index:999;
+border-bottom:1px solid #111;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
 }
 
 /* HERO */
@@ -23,69 +43,72 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background-image:url('https://images.unsplash.com/photo-1502136969935-8d0710a3e4c5');
-background-size:cover;
-background-position:center;
+text-align:center;
+padding-top:60px;
+background:linear-gradient(#020617,#030d2b);
 }
 
 .hero h1{
 font-size:60px;
-margin-bottom:10px;
+margin:0;
 }
 
 .hero p{
 max-width:600px;
-font-size:18px;
+opacity:0.8;
 }
 
 button{
-padding:14px 28px;
+padding:14px 30px;
 border:none;
-border-radius:8px;
 background:#6366f1;
 color:white;
 font-size:16px;
+border-radius:8px;
+margin:10px;
 cursor:pointer;
-margin-top:20px;
 }
 
 /* SECTIONS */
 
-.section{
+section{
 padding:80px 20px;
-max-width:1100px;
+text-align:center;
+}
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+max-width:1200px;
 margin:auto;
 }
 
 iframe{
-width:90%;
-max-width:800px;
-height:450px;
+width:100%;
+height:200px;
 border:none;
 border-radius:10px;
 }
 
-/* PLAYER */
+/* STORE */
 
-audio{
-width:80%;
-max-width:600px;
-margin-top:20px;
-}
-
-/* GRID */
-
-.products{
+.store{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-margin-top:40px;
+gap:25px;
+max-width:900px;
+margin:auto;
 }
 
 .product{
-background:#0f172a;
-padding:25px;
+background:#0b1225;
+padding:20px;
 border-radius:10px;
+}
+
+.product h3{
+margin-top:0;
 }
 
 /* FOOTER */
@@ -93,7 +116,7 @@ border-radius:10px;
 footer{
 padding:40px;
 background:#020617;
-opacity:0.7;
+border-top:1px solid #111;
 }
 
 </style>
@@ -101,121 +124,141 @@ opacity:0.7;
 
 <body>
 
-<section class="hero">
+<!-- NAVBAR -->
+
+<nav>
+<a href="#home">Home</a>
+<a href="#videos">Videos</a>
+<a href="#radio">Sleep Player</a>
+<a href="#store">Store</a>
+<a href="#about">About</a>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
 
 <h1>DeepSleep</h1>
 
 <p>
-In a world that never stops moving, DeepSleep offers a quiet refuge.  
-Through ambient soundscapes and calming frequencies we help you drift into deeper rest.
+Ambient sleep music designed to help you relax, meditate and drift into deep restorative sleep.
 </p>
 
-<button onclick="window.open('https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ')">
-Listen on YouTube
-</button>
+<a href="https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ" target="_blank">
+<button>Listen on YouTube</button>
+</a>
 
 </section>
 
+<!-- VIDEOS -->
 
-<section class="section">
+<section id="videos">
 
-<h2>Latest Deep Sleep Video</h2>
+<h2>Latest DeepSleep Videos</h2>
 
-<iframe src="https://www.youtube.com/embed/jfKfPfyJRdk" allowfullscreen></iframe>
+<div class="video-grid">
+
+<iframe src="https://www.youtube.com/embed/q1QgfQeqIDU"></iframe>
+
+<iframe src="https://www.youtube.com/embed/kb-gIn-wK5A"></iframe>
+
+<iframe src="https://www.youtube.com/embed/YT87edBZfbU"></iframe>
+
+<iframe src="https://www.youtube.com/embed/T89XQ3WqTBc"></iframe>
+
+</div>
 
 </section>
 
+<!-- RADIO / PLAYER -->
 
-<section class="section">
+<section id="radio">
 
 <h2>Sleep Music Player</h2>
 
-<p>Relax with calming sleep sounds directly from the site.</p>
+<p>Relax with calming sounds directly from the site.</p>
 
 <audio controls>
-<source src="sleepmusic.mp3" type="audio/mpeg">
+<source src="">
 </audio>
 
 </section>
 
+<!-- STORE -->
 
-<section class="section">
+<section id="store">
 
 <h2>DeepSleep Store</h2>
 
-<div class="products">
-
-<div class="product">
-<h3>DeepSleep Hoodie</h3>
-<p>Premium relaxing hoodie</p>
-</div>
+<div class="store">
 
 <div class="product">
 <h3>DeepSleep T-Shirt</h3>
-<p>Minimal cosmic design</p>
+<p>$29</p>
+<button>Coming Soon</button>
 </div>
 
 <div class="product">
-<h3>Aromatherapy Candle</h3>
-<p>Sleep relaxation scent</p>
+<h3>DeepSleep Candle</h3>
+<p>$19</p>
+<button>Coming Soon</button>
 </div>
 
 <div class="product">
-<h3>Essential Oils</h3>
-<p>Deep relaxation blend</p>
+<h3>DeepSleep Hoodie</h3>
+<p>$49</p>
+<button>Coming Soon</button>
+</div>
+
+<div class="product">
+<h3>DeepSleep Blanket</h3>
+<p>$89</p>
+<button>Coming Soon</button>
+</div>
+
+<div class="product">
+<h3>DeepSleep Essential Oil</h3>
+<p>$29</p>
+<button>Coming Soon</button>
 </div>
 
 </div>
 
 </section>
 
+<!-- ABOUT -->
 
-<section class="section">
+<section id="about">
 
-<h2>Support DeepSleep</h2>
+<h2>About DeepSleep</h2>
 
-<button onclick="window.open('https://patreon.com')">
-Support on Patreon
-</button>
+<p style="max-width:700px;margin:auto;opacity:0.8">
 
-<button onclick="window.open('https://buymeacoffee.com')">
-Buy Me a Coffee
-</button>
+DeepSleep creates calming ambient soundscapes designed to help listeners relax,
+meditate and fall asleep faster. Our music blends atmospheric textures,
+soft frequencies and deep calming tones to create the perfect environment
+for rest, focus and nighttime relaxation.
 
-</section>
+Join thousands of listeners around the world using DeepSleep to improve
+their sleep and mental calm.
 
-
-<section class="section">
-
-<h2>Follow</h2>
-
-<button onclick="window.open('https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ')">
-YouTube
-</button>
-
-<button onclick="window.open('https://tiktok.com/@deepsleep')">
-TikTok
-</button>
-
-</section>
-
-
-<section class="section">
-
-<h2>Contact</h2>
-
-<p>Email:</p>
-
-<p>
-contact@deepsleepmusic.net
 </p>
 
-</section>
+<br>
 
+<a href="https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ" target="_blank">
+<button>Subscribe on YouTube</button>
+</a>
+
+<a href="https://www.tiktok.com/@deepsleep602" target="_blank">
+<button>Follow on TikTok</button>
+</a>
+
+</section>
 
 <footer>
 
-© DeepSleep Music
+<p>© DeepSleep Music</p>
 
 </footer>
 
