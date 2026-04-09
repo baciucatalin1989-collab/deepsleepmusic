@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeepSleep Music</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#020617;
+color:white;
+text-align:center;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background-image:url('https://images.unsplash.com/photo-1502136969935-8d0710a3e4c5');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.hero p{
+max-width:600px;
+font-size:18px;
+}
+
+button{
+padding:14px 28px;
+border:none;
+border-radius:8px;
+background:#6366f1;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
+}
+
+/* SECTIONS */
+
+.section{
+padding:80px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+iframe{
+width:90%;
+max-width:800px;
+height:450px;
+border:none;
+border-radius:10px;
+}
+
+/* PLAYER */
+
+audio{
+width:80%;
+max-width:600px;
+margin-top:20px;
+}
+
+/* GRID */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.product{
+background:#0f172a;
+padding:25px;
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px;
+background:#020617;
+opacity:0.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1>DeepSleep</h1>
+
+<p>
+In a world that never stops moving, DeepSleep offers a quiet refuge.  
+Through ambient soundscapes and calming frequencies we help you drift into deeper rest.
+</p>
+
+<button onclick="window.open('https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ')">
+Listen on YouTube
+</button>
+
+</section>
+
+
+<section class="section">
+
+<h2>Latest Deep Sleep Video</h2>
+
+<iframe src="https://www.youtube.com/embed/jfKfPfyJRdk" allowfullscreen></iframe>
+
+</section>
+
+
+<section class="section">
+
+<h2>Sleep Music Player</h2>
+
+<p>Relax with calming sleep sounds directly from the site.</p>
+
+<audio controls>
+<source src="sleepmusic.mp3" type="audio/mpeg">
+</audio>
+
+</section>
+
+
+<section class="section">
+
+<h2>DeepSleep Store</h2>
+
+<div class="products">
+
+<div class="product">
+<h3>DeepSleep Hoodie</h3>
+<p>Premium relaxing hoodie</p>
+</div>
+
+<div class="product">
+<h3>DeepSleep T-Shirt</h3>
+<p>Minimal cosmic design</p>
+</div>
+
+<div class="product">
+<h3>Aromatherapy Candle</h3>
+<p>Sleep relaxation scent</p>
+</div>
+
+<div class="product">
+<h3>Essential Oils</h3>
+<p>Deep relaxation blend</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>Support DeepSleep</h2>
+
+<button onclick="window.open('https://patreon.com')">
+Support on Patreon
+</button>
+
+<button onclick="window.open('https://buymeacoffee.com')">
+Buy Me a Coffee
+</button>
+
+</section>
+
+
+<section class="section">
+
+<h2>Follow</h2>
+
+<button onclick="window.open('https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ')">
+YouTube
+</button>
+
+<button onclick="window.open('https://tiktok.com/@deepsleep')">
+TikTok
+</button>
+
+</section>
+
+
+<section class="section">
+
+<h2>Contact</h2>
+
+<p>Email:</p>
+
+<p>
+contact@deepsleepmusic.net
+</p>
+
+</section>
+
+
+<footer>
+
+© DeepSleep Music
+
+</footer>
+
+</body>
+</html>
