@@ -1,25 +1,23 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>DeepSleep</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
+*{box-sizing:border-box;margin:0;padding:0}
+
 body{
-margin:0;
-font-family:Arial;
-color:white;
+font-family:'Inter',sans-serif;
+background:#000;
+color:#fff;
 overflow-x:hidden;
-background:black;
 }
 
-/* VIDEO BACKGROUND */
+/* VIDEO SKY BACKGROUND */
 
 .video-bg{
 position:fixed;
@@ -28,18 +26,18 @@ left:0;
 width:100%;
 height:100%;
 object-fit:cover;
-z-index:-2;
-filter:brightness(0.45);
+z-index:-3;
+filter:brightness(0.35);
 }
 
-/* DARK OVERLAY */
+/* GRADIENT OVERLAY */
 
 .overlay{
 position:fixed;
 width:100%;
 height:100%;
-background:linear-gradient(to bottom,#020617cc,#020617);
-z-index:-1;
+background:linear-gradient(to bottom,#02061788,#020617);
+z-index:-2;
 }
 
 /* NAVBAR */
@@ -48,21 +46,24 @@ nav{
 position:fixed;
 top:0;
 width:100%;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
 display:flex;
 justify-content:center;
 gap:40px;
 padding:20px;
-background:rgba(0,0,0,0.35);
-backdrop-filter:blur(10px);
-z-index:10;
+z-index:5;
+border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 nav a{
 color:white;
 text-decoration:none;
-font-weight:bold;
-font-size:18px;
+font-weight:500;
+opacity:0.85;
 }
+
+nav a:hover{opacity:1}
 
 /* HERO */
 
@@ -78,47 +79,53 @@ padding:20px;
 
 .hero h1{
 font-size:80px;
-margin:0;
 letter-spacing:2px;
+margin-bottom:10px;
 }
 
 .hero p{
 max-width:600px;
 opacity:0.8;
-margin-top:10px;
 }
 
-button{
+.button{
 margin-top:25px;
-padding:14px 32px;
+padding:14px 28px;
 border:none;
 border-radius:8px;
 background:#6366f1;
 color:white;
-font-size:16px;
+font-size:15px;
 cursor:pointer;
 }
 
-/* VIDEO SECTION */
+/* SECTIONS */
 
-section{
-padding:80px 20px;
+.section{
+padding:100px 20px;
+max-width:1200px;
+margin:auto;
 text-align:center;
 }
 
+.section h2{
+font-size:36px;
+margin-bottom:40px;
+}
+
+/* VIDEO GRID */
+
 .video-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
-max-width:1200px;
-margin:auto;
 }
 
 .video-grid iframe{
 width:100%;
-height:220px;
-border-radius:10px;
+height:200px;
 border:none;
+border-radius:10px;
 }
 
 /* STORE */
@@ -127,39 +134,59 @@ border:none;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:30px;
-max-width:1000px;
-margin:auto;
+margin-top:40px;
 }
 
 .product{
-background:rgba(10,15,30,0.85);
+background:rgba(10,15,30,0.9);
 padding:25px;
 border-radius:12px;
 transition:0.3s;
+border:1px solid rgba(255,255,255,0.05);
 }
 
 .product:hover{
-transform:translateY(-6px);
+transform:translateY(-5px);
+background:#111a35;
 }
 
 .price{
 color:#a5b4fc;
-font-size:20px;
 margin:10px 0;
+font-size:18px;
 }
 
-/* MOON */
+.buy{
+margin-top:10px;
+padding:10px 20px;
+border:none;
+background:#6366f1;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
 
-.moon{
-position:fixed;
-right:80px;
-top:120px;
-width:160px;
-height:160px;
-border-radius:50%;
-background:#f1f5f9;
-box-shadow:0 0 80px white;
-opacity:0.9;
+/* ABOUT */
+
+.about{
+max-width:700px;
+margin:auto;
+opacity:0.8;
+line-height:1.6;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+margin-top:80px;
+border-top:1px solid rgba(255,255,255,0.05);
+opacity:0.6;
+}
+
+@media(max-width:700px){
+.hero h1{font-size:50px}
 }
 
 </style>
@@ -168,25 +195,19 @@ opacity:0.9;
 
 <body>
 
-<!-- VIDEO BACKGROUND -->
+<!-- SKY VIDEO -->
 
 <video autoplay muted loop class="video-bg">
-
 <source src="https://cdn.coverr.co/videos/coverr-starry-night-sky-8576/1080p.mp4" type="video/mp4">
-
 </video>
 
 <div class="overlay"></div>
 
-<div class="moon"></div>
-
 <nav>
-
 <a href="#home">Home</a>
 <a href="#videos">Videos</a>
 <a href="#store">Store</a>
 <a href="#about">About</a>
-
 </nav>
 
 <section class="hero" id="home">
@@ -194,19 +215,16 @@ opacity:0.9;
 <h1>DeepSleep</h1>
 
 <p>
-Ambient sleep music designed to help you relax,
-meditate and drift into deep restorative sleep.
+Ambient sleep music designed to help you relax, meditate and drift into deep restorative sleep.
 </p>
 
-<a href="https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ">
-
-<button>Listen on YouTube</button>
-
+<a href="https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ" target="_blank">
+<button class="button">Listen on YouTube</button>
 </a>
 
 </section>
 
-<section id="videos">
+<section class="section" id="videos">
 
 <h2>Latest Videos</h2>
 
@@ -224,69 +242,69 @@ meditate and drift into deep restorative sleep.
 
 </section>
 
-<section id="store">
+<section class="section" id="store">
 
 <h2>DeepSleep Store</h2>
 
 <div class="store">
 
 <div class="product">
-<h3>T-Shirt</h3>
+<h3>DeepSleep T-Shirt</h3>
 <div class="price">$29</div>
-<button>Buy</button>
+<button class="buy">Buy</button>
 </div>
 
 <div class="product">
-<h3>Candle</h3>
+<h3>DeepSleep Candle</h3>
 <div class="price">$19</div>
-<button>Buy</button>
+<button class="buy">Buy</button>
 </div>
 
 <div class="product">
-<h3>Hoodie</h3>
+<h3>DeepSleep Hoodie</h3>
 <div class="price">$49</div>
-<button>Buy</button>
+<button class="buy">Buy</button>
 </div>
 
 <div class="product">
-<h3>Blanket</h3>
+<h3>DeepSleep Blanket</h3>
 <div class="price">$89</div>
-<button>Buy</button>
+<button class="buy">Buy</button>
 </div>
 
 <div class="product">
-<h3>Aroma Oil</h3>
+<h3>DeepSleep Essential Oil</h3>
 <div class="price">$29</div>
-<button>Buy</button>
+<button class="buy">Buy</button>
 </div>
 
 </div>
 
 </section>
 
-<section id="about">
+<section class="section" id="about">
 
 <h2>About DeepSleep</h2>
 
-<p style="max-width:700px;margin:auto;opacity:0.8">
-
-DeepSleep creates calming ambient soundscapes designed to help listeners relax,
-sleep better and find peace at the end of the day.
-
+<p class="about">
+DeepSleep creates calming ambient soundscapes designed to help listeners relax, meditate and fall asleep faster. Our music blends atmospheric textures, soft frequencies and deep calming tones to create the perfect environment for rest and relaxation.
 </p>
 
 <br>
 
-<a href="https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ">
-<button>YouTube Channel</button>
+<a href="https://www.youtube.com/channel/UC8TgvPOrFVuhISVosdpRbrQ" target="_blank">
+<button class="button">Subscribe on YouTube</button>
 </a>
 
-<a href="https://www.tiktok.com/@deepsleep602">
-<button>TikTok</button>
+<a href="https://www.tiktok.com/@deepsleep602" target="_blank">
+<button class="button">Follow on TikTok</button>
 </a>
 
 </section>
 
+<footer>
+© DeepSleep Music
+</footer>
+
 </body>
 </html>
-```
